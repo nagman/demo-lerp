@@ -20,10 +20,7 @@ class App extends Component {
 	handleMouseMove = ({ clientX, clientY }) => {
 		this.x.next = clientX;
 		this.y.next = clientY;
-
-		if (this.rafId === undefined) {
-			this.rafId = requestAnimationFrame(this.raf);
-		}
+		if (this.rafId === undefined) this.runLoop();
 	};
 
 	raf = () => {
